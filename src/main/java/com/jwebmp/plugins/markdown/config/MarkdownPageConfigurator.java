@@ -1,6 +1,7 @@
 package com.jwebmp.plugins.markdown.config;
 
 import com.jwebmp.core.base.angular.client.annotations.angularconfig.NgScript;
+import com.jwebmp.core.base.angular.client.annotations.angularconfig.NgStyleSheet;
 import com.jwebmp.core.base.angular.client.annotations.boot.NgBootImportProvider;
 import com.jwebmp.core.base.angular.client.annotations.boot.NgBootImportReference;
 import com.jwebmp.core.base.angular.client.annotations.typescript.TsDependency;
@@ -64,6 +65,41 @@ import jakarta.validation.constraints.NotNull;
 @TsDependency(value = "prismjs", version = "^1.30.0")
 @TsDevDependency(value = "@types/prismjs", version = "^1.26.0")
 
+// PrismJS theme CSS — okaidia works well with dark themes
+@NgStyleSheet(value = "node_modules/prismjs/themes/prism-okaidia.css", name = "PrismJS Theme")
+// PrismJS line-numbers plugin CSS
+@NgStyleSheet(value = "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css", name = "PrismJS Line Numbers CSS")
+// PrismJS toolbar plugin CSS (required by clipboard/copy-to-clipboard plugin)
+@NgStyleSheet(value = "node_modules/prismjs/plugins/toolbar/prism-toolbar.css", name = "PrismJS Toolbar CSS")
+
+// PrismJS core — import via ES module and assign to globalThis so ngx-markdown
+// and all language grammars share the same Prism instance
+@NgBootImportReference(value = "Prism", reference = "prismjs", direct = true, assignToGlobal = true)
+
+// PrismJS language components — side-effect imports register on the shared Prism instance
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-markup", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-css", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-clike", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-javascript", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-typescript", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-java", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-json", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-bash", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-yaml", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-xml-doc", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-sql", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-properties", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-diff", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-kotlin", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-groovy", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-python", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-scss", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/components/prism-markdown", sideEffect = true)
+
+// PrismJS plugins — line-numbers and toolbar (needed for clipboard button)
+@NgBootImportReference(value = "", reference = "prismjs/plugins/line-numbers/prism-line-numbers", sideEffect = true)
+@NgBootImportReference(value = "", reference = "prismjs/plugins/toolbar/prism-toolbar", sideEffect = true)
+
 // Diagrams
 @TsDependency(value = "mermaid", version = "^11.13.0")
 
@@ -77,6 +113,7 @@ import jakarta.validation.constraints.NotNull;
 // Clipboard support
 @TsDependency(value = "clipboard", version = "^2.0.11")
 @NgScript(value = "node_modules/clipboard/dist/clipboard.min.js", name = "Clipboard")
+@NgBootImportReference(value = "ClipboardJS", reference = "clipboard", direct = true, assignToGlobal = true)
 
 // Angular bootstrap: provideMarkdown()
 @NgBootImportProvider("provideMarkdown()")
