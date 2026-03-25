@@ -100,8 +100,9 @@ import jakarta.validation.constraints.NotNull;
 @NgBootImportReference(value = "", reference = "prismjs/plugins/line-numbers/prism-line-numbers", sideEffect = true)
 @NgBootImportReference(value = "", reference = "prismjs/plugins/toolbar/prism-toolbar", sideEffect = true)
 
-// Diagrams
+// Diagrams — mermaid must be imported so ngx-markdown can discover it at runtime
 @TsDependency(value = "mermaid", version = "^11.13.0")
+@NgBootImportReference(value = "mermaid", reference = "mermaid", direct = true, assignToGlobal = true)
 
 // Math rendering
 @TsDependency(value = "katex", version = "^0.16.0")
