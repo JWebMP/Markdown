@@ -57,13 +57,13 @@ import jakarta.validation.constraints.NotNull;
 )
 
 // Core dependencies
-@TsDependency(value = "ngx-markdown", version = "^20.1.0")
-@TsDependency(value = "marked", version = "^16.0.0")
+@TsDependency(value = "ngx-markdown", version = ">=21.1.0")
+@TsDependency(value = "marked", version = ">=16.0.0")
 
 // Syntax highlighting (PrismJS) — ngx-markdown uses prismjs directly for highlighting
 // The prism plugin also declares this dependency; npm deduplicates to a single version
-@TsDependency(value = "prismjs", version = "^1.30.0")
-@TsDevDependency(value = "@types/prismjs", version = "^1.26.0")
+@TsDependency(value = "prismjs", version = ">=1.30.0")
+@TsDevDependency(value = "@types/prismjs", version = ">=1.26.0")
 
 // PrismJS theme CSS — solarized light as default
 @NgStyleSheet(value = "node_modules/prismjs/themes/prism-solarizedlight.css", name = "PrismJS Theme")
@@ -101,18 +101,18 @@ import jakarta.validation.constraints.NotNull;
 @NgBootImportReference(value = "", reference = "prismjs/plugins/toolbar/prism-toolbar", sideEffect = true)
 
 // Diagrams — mermaid must be imported so ngx-markdown can discover it at runtime
-@TsDependency(value = "mermaid", version = "^11.13.0")
+@TsDependency(value = "mermaid", version = ">=11.13.0")
 @NgBootImportReference(value = "mermaid", reference = "mermaid", direct = true, assignToGlobal = true)
 
 // Math rendering
-@TsDependency(value = "katex", version = "^0.16.0")
+@TsDependency(value = "katex", version = ">=0.16.0")
 @TsDevDependency(value = "@types/katex", version = "^0.16.0")
 
 // Emoji support
-@TsDependency(value = "emoji-toolkit", version = "^10.0.0")
+@TsDependency(value = "emoji-toolkit", version = ">=10.0.0")
 
 // Clipboard support
-@TsDependency(value = "clipboard", version = "^2.0.11")
+@TsDependency(value = "clipboard", version = ">=2.0.11")
 @NgScript(value = "node_modules/clipboard/dist/clipboard.min.js", name = "Clipboard")
 @NgBootImportReference(value = "ClipboardJS", reference = "clipboard", direct = true, assignToGlobal = true)
 
