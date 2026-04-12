@@ -66,7 +66,7 @@ import jakarta.validation.constraints.NotNull;
 @TsDevDependency(value = "@types/prismjs", version = ">=1.26.0")
 
 // PrismJS theme CSS — solarized light as default
-@NgStyleSheet(value = "node_modules/prismjs/themes/prism-solarizedlight.css", name = "PrismJS Theme")
+//@NgStyleSheet(value = "node_modules/prismjs/themes/prism-solarizedlight.css", name = "PrismJS Theme")
 // PrismJS line-numbers plugin CSS
 @NgStyleSheet(value = "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css", name = "PrismJS Line Numbers CSS")
 // PrismJS toolbar plugin CSS (required by clipboard/copy-to-clipboard plugin)
