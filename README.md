@@ -42,7 +42,7 @@ Built on [ngx-markdown](https://github.com/jfcere/ngx-markdown) · [Marked](http
 <dependency>
     <groupId>com.jwebmp.plugins</groupId>
     <artifactId>ngx-markdown</artifactId>
-    <version>2.0.0-RC9</version>
+    <version>2.0.0-RC10</version>
 </dependency>
 ```
 
