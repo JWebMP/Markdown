@@ -107,18 +107,23 @@ import jakarta.validation.constraints.NotNull;
 // Math rendering
 @TsDependency(value = "katex", version = ">=0.16.0")
 @TsDevDependency(value = "@types/katex", version = "^0.16.0")
+@NgScript(value = "node_modules/katex/dist/katex.min.js", name = "KaTeX")
+@NgStyleSheet(value = "node_modules/katex/dist/katex.min.css", name = "KaTeX CSS")
 
 // Emoji support
-@TsDependency(value = "emoji-toolkit", version = ">=10.0.0")
+@TsDependency(value = "emoji-toolkit", version = "^10.0.0")
+@NgScript(value = "node_modules/emoji-toolkit/lib/js/joypixels.min.js", name = "Emoji Toolkit")
 
 // Clipboard support
 @TsDependency(value = "clipboard", version = ">=2.0.11")
 @NgScript(value = "node_modules/clipboard/dist/clipboard.min.js", name = "Clipboard")
 @NgBootImportReference(value = "ClipboardJS", reference = "clipboard", direct = true, assignToGlobal = true)
 
-// Angular bootstrap: provideMarkdown()
-@NgBootImportProvider("provideMarkdown()")
+// Angular bootstrap: provideMarkdown() with mermaid + clipboard config
+@NgBootImportProvider("provideMarkdown({ mermaidOptions: { provide: MERMAID_OPTIONS, useValue: { startOnLoad: false } }, clipboardOptions: { provide: CLIPBOARD_OPTIONS, useValue: { buttonComponent: undefined } } })")
 @NgBootImportReference(value = "provideMarkdown", reference = "ngx-markdown")
+@NgBootImportReference(value = "MERMAID_OPTIONS", reference = "ngx-markdown")
+@NgBootImportReference(value = "CLIPBOARD_OPTIONS", reference = "ngx-markdown")
 public class MarkdownPageConfigurator implements IPageConfigurator<MarkdownPageConfigurator>
 {
     /**
