@@ -58,7 +58,7 @@ import jakarta.validation.constraints.NotNull;
 
 // Core dependencies
 @TsDependency(value = "ngx-markdown", version = ">=21.1.0")
-@TsDependency(value = "marked", version = ">=16.0.0")
+@TsDependency(value = "marked", version = ">=18.0.0")
 
 // Syntax highlighting (PrismJS) — ngx-markdown uses prismjs directly for highlighting
 // The prism plugin also declares this dependency; npm deduplicates to a single version
