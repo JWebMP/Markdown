@@ -101,7 +101,7 @@ import jakarta.validation.constraints.NotNull;
 @NgBootImportReference(value = "", reference = "prismjs/plugins/toolbar/prism-toolbar", sideEffect = true)
 
 // Diagrams — mermaid must be imported so ngx-markdown can discover it at runtime
-@TsDependency(value = "mermaid", version = ">=11.13.0")
+@TsDependency(value = "mermaid", version = "11.14.0", overrides = true)
 @NgBootImportReference(value = "mermaid", reference = "mermaid", direct = true, assignToGlobal = true)
 
 // Math rendering
@@ -152,4 +152,3 @@ public class MarkdownPageConfigurator implements IPageConfigurator<MarkdownPageC
         return enabled;
     }
 }
-
