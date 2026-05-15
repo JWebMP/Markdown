@@ -4,14 +4,15 @@
     <parent>
         <groupId>com.jwebmp</groupId>
         <artifactId>parent</artifactId>
-        <version>2.0.0-SNAPSHOT</version>
+        <version>2.0.2</version>
     </parent>
 
     <groupId>com.jwebmp.plugins</groupId>
     <artifactId>ngx-markdown</artifactId>
     <packaging>jar</packaging>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>2.0.2</version>
     <name>NGX Markdown</name>
+    <url>https://github.com/JWebMP/Markdown</url>
     <description>The JWebMP implementation for ngx-markdown - Markdown rendering with Prism syntax highlighting, Mermaid diagrams, KaTeX math, and emoji support for Angular</description>
 
     <dependencies>
@@ -40,7 +41,7 @@
 
     <properties>
         <ignore.moditect>true</ignore.moditect>
-        <project.scm.nameUrl>/JWebMP/Plugins/Markdown</project.scm.nameUrl>
+        <project.scm.nameUrl>/JWebMP/Markdown</project.scm.nameUrl>
     </properties>
 
     <dependencyManagement>
@@ -76,6 +77,10 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
