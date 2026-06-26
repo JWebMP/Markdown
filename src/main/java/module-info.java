@@ -16,8 +16,8 @@ module com.jwebmp.plugins.markdown {
     provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.markdown.config.MarkdownPageConfigurator;
     provides IGuiceScanModuleInclusions with MarkdownInclusionModule;
 
-    opens com.jwebmp.plugins.markdown to com.fasterxml.jackson.databind, com.google.guice, com.jwebmp.core, com.jwebmp.core.angular;
-    opens com.jwebmp.plugins.markdown.config to com.fasterxml.jackson.databind, com.google.guice, com.jwebmp.core, com.jwebmp.core.angular;
-    opens com.jwebmp.plugins.markdown.implementations to com.fasterxml.jackson.databind, com.google.guice, com.jwebmp.core, com.jwebmp.core.angular;
+    opens com.jwebmp.plugins.markdown to tools.jackson.databind, com.google.guice, com.jwebmp.core, com.jwebmp.core.angular;
+    opens com.jwebmp.plugins.markdown.config to tools.jackson.databind, com.google.guice, com.jwebmp.core, com.jwebmp.core.angular;
+    opens com.jwebmp.plugins.markdown.implementations to tools.jackson.databind, com.google.guice, com.jwebmp.core, com.jwebmp.core.angular;
 }
 
