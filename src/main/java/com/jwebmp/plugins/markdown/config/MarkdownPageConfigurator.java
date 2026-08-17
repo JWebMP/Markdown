@@ -57,8 +57,12 @@ import jakarta.validation.constraints.NotNull;
 )
 
 // Core dependencies
+// NOTE: ngx-markdown 21.x declares a peer dependency of marked@^17.0.0. Using an open
+// ">=18.0.0" range here resolves to marked 18.x and breaks `npm install` with ERESOLVE,
+// which in turn leaves dist/ empty and produces an empty nginx image. Keep marked pinned
+// to the major that ngx-markdown actually supports.
 @TsDependency(value = "ngx-markdown", version = ">=21.1.0")
-@TsDependency(value = "marked", version = ">=18.0.0")
+@TsDependency(value = "marked", version = "^17.0.0")
 
 // Syntax highlighting (PrismJS) — ngx-markdown uses prismjs directly for highlighting
 // The prism plugin also declares this dependency; npm deduplicates to a single version
