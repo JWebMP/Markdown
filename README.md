@@ -15,7 +15,7 @@
 ![KaTeX](https://img.shields.io/badge/KaTeX-0.16-6B9F35)
 ![JWebMP](https://img.shields.io/badge/JWebMP-2.0-0A7)
 
-Full-featured Markdown rendering for JWebMP with Angular 21. Wraps [ngx-markdown](https://github.com/jfcere/ngx-markdown) providing Prism.js syntax highlighting, Mermaid diagrams, KaTeX math rendering, emoji support, and clipboard copy.
+Full-featured Markdown rendering for JWebMP with Angular 22. Wraps [ngx-markdown](https://github.com/jfcere/ngx-markdown) providing Prism.js syntax highlighting, Mermaid diagrams, KaTeX math rendering, emoji support, and clipboard copy.
 
 Built on [ngx-markdown](https://github.com/jfcere/ngx-markdown) · [Marked](https://marked.js.org/) · [PrismJS](https://prismjs.com/) · [Mermaid](https://mermaid.js.org/) · [KaTeX](https://katex.org/) · JPMS module `com.jwebmp.plugins.markdown` · Java 25+
 
@@ -179,7 +179,7 @@ Automatically managed by the page configurator:
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| `ngx-markdown` | `^19.0.0` | Angular markdown component |
+| `ngx-markdown` | `^22.1.1` | Angular markdown component |
 | `marked` | `^17.0.0` | Markdown parser |
 | `prismjs` | `^1.30.0` | Syntax highlighting |
 | `mermaid` | `^11.0.0` | Diagrams & charts |
