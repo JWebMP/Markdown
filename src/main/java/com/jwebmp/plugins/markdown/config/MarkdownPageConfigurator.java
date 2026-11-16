@@ -108,8 +108,8 @@ import jakarta.validation.constraints.NotNull;
 @TsDependency(value = "mermaid", version = "11.14.0", overrides = true)
 @NgBootImportReference(value = "mermaid", reference = "mermaid", direct = true, assignToGlobal = true)
 
-// Math rendering
-@TsDependency(value = "katex", version = ">=0.16.0")
+// Math rendering: keep within ngx-markdown 22's KaTeX peer range.
+@TsDependency(value = "katex", version = ">=0.16.0 <0.19.0")
 @TsDevDependency(value = "@types/katex", version = "^0.16.0")
 @NgScript(value = "node_modules/katex/dist/katex.min.js", name = "KaTeX")
 @NgStyleSheet(value = "node_modules/katex/dist/katex.min.css", name = "KaTeX CSS")
